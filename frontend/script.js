@@ -19,7 +19,7 @@ function getOrCreateSessionId() {
 
 async function createNewSession() {
   try {
-    const response = await fetch("http://127.0.0.1:8000/chat/session", {
+    const response = await fetch("https://ai-chatbot-copilot-production.up.railway.app/session", {
       method: "POST",
       headers: { "Content-Type": "application/json" }
     });
@@ -57,7 +57,7 @@ async function loadChatHistory() {
   if (!currentSessionId || historyLoaded) return;
   
   try {
-    const response = await fetch(`http://127.0.0.1:8000/chat/history/${currentSessionId}`);
+    const response = await fetch(`https://ai-chatbot-copilot-production.up.railway.app/history/${currentSessionId}`);
     const chat = document.getElementById("chat-body");
     
     if (response.ok) {
@@ -349,7 +349,7 @@ async function clearChatHistory() {
   if (!confirmClear) return;
 
   try {
-    const response = await fetch(`http://127.0.0.1:8000/chat/clear/${currentSessionId}`, {
+    const response = await fetch(`https://ai-chatbot-copilot-production.up.railway.app/clear/${currentSessionId}`, {
       method: "DELETE"
     });
     
@@ -378,7 +378,7 @@ async function submitFeedback() {
   }
 
   try {
-    const response = await fetch("http://127.0.0.1:8000/chat/feedback", {
+    const response = await fetch("https://ai-chatbot-copilot-production.up.railway.app/feedback", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
