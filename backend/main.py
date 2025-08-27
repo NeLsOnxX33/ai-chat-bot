@@ -19,7 +19,7 @@ app.add_middleware(
     allow_origins=["*"],  # Fixed: was empty string
     allow_credentials=True,
     allow_methods=["*"],  # Fixed: was empty string
-    allow_headers=["*"],
+    allow_headers=["*"], 
 )
 
 # Include routers
