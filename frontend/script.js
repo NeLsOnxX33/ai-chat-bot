@@ -53,40 +53,40 @@ function renderMessage(message, sender) {
   chat.innerHTML += msgHTML;
 }
 
-// async function loadChatHistory() {
-//   if (!currentSessionId || historyLoaded) return;
+async function loadChatHistory() {
+  if (!currentSessionId || historyLoaded) return;
   
-//   try {
-//     const response = await fetch(`https://ai-chatbot-copilot-production.up.railway.app/history/${currentSessionId}`);
-//     const chat = document.getElementById("chat-body");
+  try {
+    const response = await fetch(`https://ai-chatbot-copilot-production.up.railway.app/history/${currentSessionId}`);
+    const chat = document.getElementById("chat-body");
     
-//     if (response.ok) {
-//       const data = await response.json();
-//       // Only clear if we're going to show something new
-//       if (data.messages && data.messages.length > 0) {
-//         chat.innerHTML = ''; // Clear only when we have messages to show
-//         data.messages.forEach(msg => {
-//           renderMessage(msg.message, msg.sender);
-//         });
-//         historyLoaded = true;
-//       } else if (!historyLoaded) {
-//         // Only show welcome message if no history exists and we haven't loaded before
-//         showWelcomeMessage();
-//         historyLoaded = true;
-//       }
-//     } else if (!historyLoaded) {
-//       showWelcomeMessage();
-//       historyLoaded = true;
-//     }
-//     scrollToBottom();
-//   } catch (error) {
-//     console.error("Load error:", error);
-//     if (!historyLoaded) {
-//       showWelcomeMessage();
-//       historyLoaded = true;
-//     }
-//   }
-// }
+    if (response.ok) {
+      const data = await response.json();
+      // Only clear if we're going to show something new
+      if (data.messages && data.messages.length > 0) {
+        chat.innerHTML = ''; // Clear only when we have messages to show
+        data.messages.forEach(msg => {
+          renderMessage(msg.message, msg.sender);
+        });
+        historyLoaded = true;
+      } else if (!historyLoaded) {
+        // Only show welcome message if no history exists and we haven't loaded before
+        showWelcomeMessage();
+        historyLoaded = true;
+      }
+    } else if (!historyLoaded) {
+      showWelcomeMessage();
+      historyLoaded = true;
+    }
+    scrollToBottom();
+  } catch (error) {
+    console.error("Load error:", error);
+    if (!historyLoaded) {
+      showWelcomeMessage();
+      historyLoaded = true;
+    }
+  }
+}
 
 function showWelcomeMessage() {
   const chat = document.getElementById("chat-body");
