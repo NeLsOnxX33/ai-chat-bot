@@ -19,7 +19,7 @@ function getOrCreateSessionId() {
 
 async function createNewSession() {
   try {
-    const response = await fetch("https://ai-chatbot-copilot-production.up.railway.app/session", {
+    const response = await fetch("/session", {
       method: "POST",
       headers: { "Content-Type": "application/json" }
     });
@@ -57,7 +57,7 @@ async function loadChatHistory() {
   if (!currentSessionId || historyLoaded) return;
   
   try {
-    const response = await fetch(`https://ai-chatbot-copilot-production.up.railway.app/history/${currentSessionId}`);
+    const response = await fetch(`/history/${currentSessionId}`);
     const chat = document.getElementById("chat-body");
     
     if (response.ok) {
@@ -303,7 +303,7 @@ async function sendMessage() {
   showTypingIndicator();
 
   try {
-    const response = await fetch("https://ai-chatbot-copilot-production.up.railway.app/chat", {
+    const response = await fetch("/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: message, session_id: currentSessionId })
@@ -349,7 +349,7 @@ async function clearChatHistory() {
   if (!confirmClear) return;
 
   try {
-    const response = await fetch(`https://ai-chatbot-copilot-production.up.railway.app/clear/${currentSessionId}`, {
+    const response = await fetch(`/clear/${currentSessionId}`, {
       method: "DELETE"
     });
     
@@ -378,7 +378,7 @@ async function submitFeedback() {
   }
 
   try {
-    const response = await fetch("https://ai-chatbot-copilot-production.up.railway.app/feedback", {
+    const response = await fetch("/feedback", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

@@ -20,6 +20,9 @@ pydantic==2.5.0
 # Timezone handling
 pytz==2023.3
 
+
+sqlite3
+
 # CSV handling (built-in)
 # Email (built-in)
 # JSON (built-in)
