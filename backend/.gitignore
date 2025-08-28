@@ -1,0 +1,56 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.db
+*.log
+*.pkl
+*.pyc
+*.pyo
+
+# Virtual environment
+env/
+venv/
+ENV/
+.venv/
+
+# === FastAPI/Uvicorn logs ===
+*.log
+*.pid
+
+# === .env files ===
+.env
+.env.*
+
+# === Node/Frontend ===
+node_modules/
+dist/
+build/
+
+# === OS Files ===
+.DS_Store
+Thumbs.db
+
+# === VSCode or JetBrains editors ===
+.vscode/
+.idea/
+
+# === Coverage & test ===
+htmlcov/
+coverage.xml
+.cache/
+.pytest_cache/
+.tox/
+nosetests.xml
+test-results.xml
+
+# === Jupyter ===
+.ipynb_checkpoints/
+
+# === Static files or uploads (optional) ===
+/static/
+uploads/
+media/
+
+# === Git ===
+*.orig
