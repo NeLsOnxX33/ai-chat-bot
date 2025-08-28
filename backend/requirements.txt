@@ -1,39 +1,16 @@
-fastapi== 0.104.1
-uvicorn==0.24.0
+# Core dependencies
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
 pydantic==2.5.0
 openai
 python-dotenv
 python-multipart==0.0.6
-# FastAPI and ASGI
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-
-# Template engine
 jinja2==3.1.2
-
-# Form handling
-python-multipart==0.0.6
-
-# Data validation
-pydantic==2.5.0
-
-# Timezone handling
 pytz==2023.3
 
-
-sqlite3
-
-# CSV handling (built-in)
-# Email (built-in)
-# JSON (built-in)
-# UUID (built-in)
-# Logging (built-in)
-# OS (built-in)
-# Datetime (built-in)
-
-# Development dependencies (optional)
-# pytest==7.4.3
-# pytest-asyncio==0.21.1
+# Optional: Dev dependencies
 # black==23.11.0
 # isort==5.12.0
 # flake8==6.1.0
+# pytest==7.4.3
+# pytest-asyncio==0.21.1
