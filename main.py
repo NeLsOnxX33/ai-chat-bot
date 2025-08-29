@@ -1,11 +1,15 @@
 import sqlite3
+import sys
+import os
+sys.path.append(os.path.dirname(__file__), "backend")
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
-from copilot.router import router
-from copilot import feedback
-from copilot import auth
+from backend.copilot.router import router
+from backend.copilot import feedback
+from backend.copilot import auth
+
 
 app = FastAPI(
     title="AI Chatbot API",
