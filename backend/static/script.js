@@ -57,7 +57,7 @@ async function loadChatHistory() {
   if (!currentSessionId || historyLoaded) return;
   
   try {
-    const response = await fetch(`/history/${currentSessionId}`);
+    const response = await fetch(`/api/history/${currentSessionId}`);
     const chat = document.getElementById("chat-body");
     
     if (response.ok) {
@@ -349,7 +349,7 @@ async function clearChatHistory() {
   if (!confirmClear) return;
 
   try {
-    const response = await fetch(`/clear/${currentSessionId}`, {
+    const response = await fetch(`/api/clear/${currentSessionId}`, {
       method: "DELETE"
     });
     
@@ -378,7 +378,7 @@ async function submitFeedback() {
   }
 
   try {
-    const response = await fetch("/feedback", {
+    const response = await fetch("/api/feedback", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
