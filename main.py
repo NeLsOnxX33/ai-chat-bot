@@ -35,7 +35,7 @@ app.include_router(auth.router, tags=["Authentication"])
 
 # Get absolute paths
 BASE_DIR = Path(__file__).resolve().parent
-STATIC_DIR = BASE_DIR / "static"
+STATIC_DIR = BASE_DIR / "backend" / "static"
 INDEX_FILE = STATIC_DIR / "index.html"
 
 # Debug information (remove in production)
