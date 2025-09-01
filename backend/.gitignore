@@ -48,9 +48,9 @@ test-results.xml
 .ipynb_checkpoints/
 
 # === Static files or uploads (optional) ===
-/static/
-uploads/
-media/
+# /static/
+# uploads/
+# media/
 
 # === Git ===
 *.orig
