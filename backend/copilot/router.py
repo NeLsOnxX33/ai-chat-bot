@@ -3,7 +3,7 @@ import uuid
 from fastapi import APIRouter, Request, HTTPException
 from pydantic import BaseModel
 from typing import List, Optional
-from copilot.actions import get_answer
+from backend.copilot.actions import get_answer
 import logging
 from datetime import datetime, timezone
 import csv

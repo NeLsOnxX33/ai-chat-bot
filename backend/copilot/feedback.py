@@ -3,7 +3,7 @@ from fastapi import Request, APIRouter, Depends, HTTPException
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 import sqlite3
-from copilot.auth import admin_required
+from backend.copilot.auth import admin_required
 from datetime import datetime
 import pytz
 
