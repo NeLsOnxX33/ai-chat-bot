@@ -4,6 +4,8 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pathlib import Path
 import sqlite3
+import os
+import uvicorn
 
 # Import your routers
 from backend.copilot.router import router as chat_router
@@ -76,7 +78,6 @@ async def get_chat_history():
 # Mount the API app at /api
 app.mount("/api", api_app)
 
-# Run the app locally
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=10000, reload=True)
+    port = int(os.environ.get("PORT", 10000))  # fallback to 10000
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
