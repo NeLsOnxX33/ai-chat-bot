@@ -4,7 +4,8 @@ from difflib import get_close_matches
 from pathlib import Path
 
 # Correct path to faqs.json from actions.py
-faq_path = Path(__file__).resolve().parent.parent.parent / "faqs.json"
+base_dir = Path(__file__).resolve().parent.parent.parent
+faq_path = base_dir / "faqs.json"
 
 def load_faqs():
     """Load FAQ data from JSON file"""
