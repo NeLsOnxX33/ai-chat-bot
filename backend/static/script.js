@@ -19,7 +19,7 @@ function getOrCreateSessionId() {
 
 async function createNewSession() {
   try {
-    const response = await fetch("/session", {
+    const response = await fetch("/api/session", {
       method: "POST",
       headers: { "Content-Type": "application/json" }
     });
@@ -303,7 +303,7 @@ async function sendMessage() {
   showTypingIndicator();
 
   try {
-    const response = await fetch("/chat", {
+    const response = await fetch("/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: message, session_id: currentSessionId })
