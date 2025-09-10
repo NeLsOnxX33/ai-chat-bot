@@ -4,7 +4,7 @@ from difflib import get_close_matches
 from pathlib import Path
 
 # Correct path to faqs.json from actions.py
-faq_path = os.path.join(os.path.dirname(__file__), "..", "data", 'faqs.json')
+faq_path = os.path.join(os.path.dirname(__file__), "..", "faqs.json")
 
 def load_faqs():
     """Load FAQ data from JSON file"""
