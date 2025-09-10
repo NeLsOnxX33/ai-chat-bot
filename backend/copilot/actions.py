@@ -17,6 +17,11 @@ def load_faqs():
     except json.JSONDecodeError:
         print(f"Invalid JSON in FAQ file: {faq_path}")
         return []
+    
+
+    print("Absolute FAQ path:", os.path.abspath(faq_path))
+    print("File exists:", os.path.exists(faq_path))
+
 
 def get_answer(user_input: str) -> str:
     """Return the best matching answer from the FAQs"""
